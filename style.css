@@ -121,13 +121,14 @@ img:hover {
   mix-blend-mode: difference;
   opacity: 0.8;
 }
+
 .kyuii {
   position: fixed;
   top: 40px;
-  right: 40px;
+  left: 50%;
+  transform: translateX(-50%); /* 🔥 중앙 정렬 핵심 */
   display: flex;
   gap: 15px;
-  cursor: pointer;
 }
 
 .kyuii .circle {
