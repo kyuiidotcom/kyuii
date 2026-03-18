@@ -46,3 +46,12 @@ img {
 img:hover {
   transform: scale(1.02);
 }
+
+.title {
+  animation: glow 3s ease-in-out infinite;
+}
+
+@keyframes glow {
+  0%, 100% { opacity: 0.4; }
+  50% { opacity: 1; }
+}
