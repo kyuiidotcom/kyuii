@@ -227,3 +227,23 @@ img:hover {
   75%  { transform: translate(6px, -8px); }
   100% { transform: translate(0px, 0px); }
 }
+
+/* 메뉴 원 떠다니기 */
+
+.menu a {
+  animation: floatMenu 10s infinite ease-in-out;
+}
+
+/* 각각 다르게 */
+.menu-item:nth-child(1) a { animation-delay: 0s; }
+.menu-item:nth-child(2) a { animation-delay: 2s; }
+.menu-item:nth-child(3) a { animation-delay: 4s; }
+
+/* 애니메이션 */
+@keyframes floatMenu {
+  0%   { transform: translate(0px, 0px); }
+  25%  { transform: translate(6px, -8px); }
+  50%  { transform: translate(-5px, 6px); }
+  75%  { transform: translate(4px, -5px); }
+  100% { transform: translate(0px, 0px); }
+}
