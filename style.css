@@ -105,3 +105,19 @@ img:hover {
   color: black;
   transform: scale(1.2) rotate(8deg);
 }
+.circle:nth-child(1) {
+  transform: translateY(-20px);
+}
+.circle:nth-child(2) {
+  transform: translateY(20px);
+}
+.circle:nth-child(3) {
+  transform: translateY(-10px);
+}
+
+.title {
+  font-size: 20px;
+  letter-spacing: 12px;
+  mix-blend-mode: difference;
+  opacity: 0.8;
+}
