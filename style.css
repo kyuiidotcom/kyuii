@@ -55,3 +55,20 @@ img:hover {
   0%, 100% { opacity: 0.4; }
   50% { opacity: 1; }
 }
+.contact {
+  position: fixed;
+  bottom: 40px;
+  right: 40px;
+  font-size: 12px;
+  letter-spacing: 2px;
+  opacity: 0.6;
+}
+
+.contact a {
+  color: white;
+  text-decoration: none;
+}
+
+.contact a:hover {
+  opacity: 1;
+}
