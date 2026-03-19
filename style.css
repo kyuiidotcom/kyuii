@@ -278,3 +278,11 @@ img:hover {
   50% { opacity: 1; }
 }
 
+.footer {
+  animation: fade 5s infinite ease-in-out;
+}
+
+@keyframes fade {
+  0%, 100% { opacity: 0.3; }
+  50% { opacity: 0.6; }
+}
