@@ -256,3 +256,25 @@ img:hover {
 .page.active {
   display: block;
 }
+
+#bio {
+  position: fixed;
+  bottom: 60px;        /* 아래에서 60px */
+  left: 50%;
+  transform: translateX(-50%);  /* 중앙 정렬 */
+
+  text-align: center;
+  color: white;
+  font-size: 14px;
+  line-height: 1.8;
+}
+
+#bio {
+  animation: blink 3s infinite ease-in-out;
+}
+
+@keyframes blink {
+  0%, 100% { opacity: 0.4; }
+  50% { opacity: 1; }
+}
+
