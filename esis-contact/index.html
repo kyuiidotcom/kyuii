@@ -28,6 +28,7 @@ body {
 
 .content {
   font-size: 20px;
+  white-space: pre-line; /* 줄바꿈 유지 */
 }
 
 .button {
@@ -37,6 +38,7 @@ body {
   width: fit-content;
   cursor: pointer;
   transition: 0.3s;
+  opacity: 0; /* 처음 숨김 */
 }
 
 .button:hover {
@@ -45,24 +47,23 @@ body {
 }
 
 .ref-links {
-  margin-top: 60px;   /* 위 여백 */
-  margin-bottom: 60px; /* 아래 여백 */
+  margin-top: 60px;
+  margin-bottom: 60px;
   display: flex;
   flex-direction: column;
   gap: 10px;
 }
 
 .ref-links a {
-  font-size: 13px;       /* 폰트 작게 */
-  color: #777;           /* 회색톤 */
-  text-decoration: none; /* 밑줄 제거 */
+  font-size: 13px;
+  color: #777;
+  text-decoration: none;
   transition: 0.3s;
 }
 
 .ref-links a:hover {
-  color: #eaeaea;        /* 호버 시 밝아짐 */
+  color: #eaeaea;
 }
-
 </style>
 </head>
 
@@ -70,49 +71,77 @@ body {
 
 <div class="section">
   <div class="title">06 / DEAL</div>
-  <div class="content">
-    esis is currently opening early-stage collaboration<br>
-    with selected partners and investors.
-  </div>
+  <div class="content" id="typed-deal"></div>
 </div>
 
 <div class="section">
   <div class="title">07 / FOCUS</div>
-  <div class="content">
-    IP development<br>
-    system expansion<br>
-    global positioning
-  </div>
+  <div class="content" id="typed-focus"></div>
 </div>
 
 <div class="ref-links">
 
   <a href="http://kyuii.com/esis-contact/" target="_blank">esis</a>
-
   <a href="https://www.einsteininseoul.kr/" target="_blank">einsteininseoul</a>
-
   <a href="https://dolbag.kr/" target="_blank">dolbag 001</a>
   <a href="https://dolbag.kr/" target="_blank">dolbag 002</a>
-
-   <a href="https://neuroethicssociety.org/meeting/neuroethics-2026/" target="_blank">paper INS Neuroethics 2026</a>
-
-   <a href="http://kyuii.com/esis-contact/" target="_blank">GT2</a>
-   <a href="http://kyuii.com/esis-contact/" target="_blank">znmn bag</a>
+  <a href="https://neuroethicssociety.org/meeting/neuroethics-2026/" target="_blank">paper INS Neuroethics 2026</a>
+  <a href="http://kyuii.com/esis-contact/" target="_blank">GT2</a>
+  <a href="http://kyuii.com/esis-contact/" target="_blank">znmn bag</a>
 
 </div>
   
 <div class="section">
   <div class="title">08 / CONTACT</div>
-  <div class="content">
-    kyuii <br>
-    seoul / austin / global<br><br>
-    contact: csakic21c.lab@gmail.com
-  </div>
+  <div class="content" id="typed-contact"></div>
 </div>
 
-<div class="button">
+<div class="button" id="cta">
   > request access
 </div>
+
+<!-- Typed.js -->
+<script src="https://cdn.jsdelivr.net/npm/typed.js@2.0.12"></script>
+
+<script>
+new Typed("#typed-deal", {
+  strings: [
+`esis is currently opening early-stage collaboration
+with selected partners and investors.`
+  ],
+  typeSpeed: 18,
+  startDelay: 200,
+  showCursor: false
+});
+
+new Typed("#typed-focus", {
+  strings: [
+`IP development
+system expansion
+global positioning`
+  ],
+  typeSpeed: 18,
+  startDelay: 1500,
+  showCursor: false
+});
+
+new Typed("#typed-contact", {
+  strings: [
+`kyuii
+seoul / austin / global
+
+contact: csakic21c.lab@gmail.com`
+  ],
+  typeSpeed: 18,
+  startDelay: 3000,
+  showCursor: false
+});
+
+// 버튼 마지막에 등장
+setTimeout(() => {
+  document.getElementById("cta").style.opacity = 1;
+}, 5200);
+</script>
 
 </body>
 </html>
