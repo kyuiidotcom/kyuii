@@ -112,6 +112,23 @@ body {
 }
 </style>
 
+<head>
+
+<style>
+.fade-out-all {
+  animation: flicker 0.3s infinite alternate, disappearAll 1.5s forwards;
+}
+
+@keyframes disappearAll {
+  to {
+    opacity: 0;
+    transform: translateY(10px);
+  }
+}
+</style>
+
+</head>
+
 <script>
 const lines = [
 "esis KR",
@@ -126,6 +143,7 @@ const lines = [
 "               │",
 "               ▼ (license / transfer)",
 "",
+"---SPLIT---",
 "dol82 online",
 "Commercial n sales",
 "│",
@@ -136,14 +154,33 @@ const lines = [
 
 const container = document.getElementById("structureText");
 
+let lowerGroup = [];
+
 lines.forEach((line, i) => {
   setTimeout(() => {
-    const span = document.createElement("div");
-    span.className = "structure-line";
-    span.textContent = line;
-    container.appendChild(span);
+    const div = document.createElement("div");
+
+    if (line === "---SPLIT---") return;
+
+    div.className = "structure-line";
+    div.textContent = line;
+
+    container.appendChild(div);
+
+    // dol82 이후는 그룹으로 저장
+    if (i > lines.indexOf("---SPLIT---")) {
+      lowerGroup.push(div);
+    }
+
   }, i * 120);
 });
+
+// 일정 시간 후 하단 전체 제거
+setTimeout(() => {
+  lowerGroup.forEach(el => {
+    el.classList.add("fade-out-all");
+  });
+}, 4000); // 4초 후 사라짐
 </script>
 
 </body>
