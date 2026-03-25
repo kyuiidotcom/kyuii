@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>esis System</title>
+
+<link href="https://fonts.googleapis.com/css2?family=Source+Code+Pro:wght@300;400&display=swap" rel="stylesheet">
+<script src="https://cdn.jsdelivr.net/npm/typed.js@2.0.12"></script>
+
+<style>
+  body {
+    margin: 0;
+    background: black;
+    color: #eaeaea;
+    font-family: 'Source Code Pro', monospace;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+  }
+
+  #container {
+    width: 800px;
+    font-size: 18px;
+    line-height: 1.6;
+    white-space: pre;
+  }
+
+  .cursor {
+    display: inline-block;
+    width: 10px;
+    background: #eaeaea;
+    margin-left: 5px;
+    animation: blink 1s infinite;
+  }
+
+  @keyframes blink {
+    0%, 50%, 100% { opacity: 1; }
+    25%, 75% { opacity: 0; }
+  }
+
+  /* 버튼 */
+  #enterBtn {
+    display: none;
+    margin-top: 30px;
+    cursor: pointer;
+    border: 1px solid #eaeaea;
+    padding: 10px 20px;
+    width: fit-content;
+    transition: all 0.3s ease;
+  }
+
+  #enterBtn:hover {
+    background: #eaeaea;
+    color: black;
+  }
+</style>
+</head>
+
+<body>
+
+<!-- 🔐 비밀번호 -->
+<script>
+var password = "esis2026";
+var input = prompt("Enter password");
+
+if (input !== password) {
+  document.body.innerHTML = "Access Denied";
+}
+</script>
+
+<div id="container">
+  <span id="typed"></span><span class="cursor"></span>
+
+  <!-- 버튼 -->
+  <div id="enterBtn">[ Enter ESIS ]</div>
+</div>
+
+<script>
+var typed = new Typed("#typed", {
+  strings: [
+
+`Luxury Cultural Layer
+
+│
+│  Experimental Techwear
+│  ├ Vollebak
+│  ├ Acronym
+│  ├ esis (target)
+│
+│  Functional Fashion
+│  ├ Stone Island
+│  ├ Arc'teryx
+│
+│  Performance Apparel
+│  ├ Nike
+│  ├ Adidas
+│
+│  Smart Wearables
+│  ├ Apple
+│
+│  Medical Wearables
+│
+│  Home Medical Devices
+
+`,
+`^2000
+esis is not a brand label.
+esis is a system.`
+
+  ],
+
+  typeSpeed: 25,
+  backSpeed: 0,
+  showCursor: false,
+  fadeOut: true,
+  loop: false,
+
+  onComplete: function() {
+    document.getElementById("enterBtn").style.display = "block";
+  }
+});
+</script>
+
+</body>
+</html>
