@@ -81,6 +81,69 @@ body {
   </div>
 </div>
 
+<div class="section">
+  <div class="title">SYSTEM STRUCTURE</div>
+  <div class="content fade">
+    this is not the full structure.
+  </div>
+</div>
+
+<div class="structure">
+  <pre id="structureText"></pre>
+</div>
+
+<style>
+.structure {
+  margin-top: 40px;
+  opacity: 0.8;
+}
+
+.structure-line {
+  opacity: 0;
+  animation: flicker 0.5s forwards;
+}
+
+@keyframes flicker {
+  0% { opacity: 0; }
+  50% { opacity: 0.3; }
+  100% { opacity: 1; }
+}
+</style>
+
+<script>
+const lines = [
+"esis KR",
+"Philosophy / R&D / PR",
+"│",
+"├─ Research Division",
+"│     └─ US Lab (BCI / Art-Tech)",
+"│     └─ Berlin Lab (Art-Commerce)",
+"│",
+"└─ Intellectual Assets",
+"      └─ Papers / Concepts / Lab Prototypes",
+"               │",
+"               ▼ (license / transfer)",
+"",
+"dol82 online",
+"Commercial n sales",
+"│",
+"├─ Atelier Line (High-End)",
+"├─ Core Line (dolbag series)",
+"└─ Edition (Book / Printed Works / objet Limited)"
+];
+
+const container = document.getElementById("structureText");
+
+lines.forEach((line, i) => {
+  setTimeout(() => {
+    const span = document.createElement("div");
+    span.className = "structure-line";
+    span.textContent = line;
+    container.appendChild(span);
+  }, i * 120);
+});
+</script>
+
 </body>
 </html>
 
