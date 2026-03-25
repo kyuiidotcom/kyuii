@@ -143,5 +143,29 @@ setTimeout(() => {
 }, 5200);
 </script>
 
+<script>
+const btn = document.getElementById("cta");
+
+btn.addEventListener("click", () => {
+
+  // 버튼 스타일 변경
+  btn.style.background = "red";
+  btn.style.color = "white";
+  btn.style.borderColor = "red";
+
+  // 텍스트 변경
+  btn.innerText = "WARNING: restricted access";
+
+  // 살짝 흔들림 효과
+  btn.style.animation = "shake 0.3s 2";
+
+  // 딜레이 후 이동
+  setTimeout(() => {
+    window.location.href = "mailto:csakic21c.lab@gmail.com";
+  }, 1500);
+
+});
+</script>
+
 </body>
 </html>
