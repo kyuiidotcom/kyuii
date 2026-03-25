@@ -203,7 +203,11 @@ new Typed("#typed-01", {
   typeSpeed: 18,
   startDelay: 300,
   showCursor: false,
-  loop: false
+  loop: false,
+
+  onComplete: function() {
+    document.getElementById("typed-01").classList.add("blink-text");
+  }
 });
 </script>
 
