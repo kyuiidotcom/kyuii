@@ -286,3 +286,30 @@ img:hover {
   0%, 100% { opacity: 0.3; }
   50% { opacity: 0.6; }
 }
+
+#bio {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  min-height: 100vh;
+
+  text-align: center;
+
+  font-size: 13px;
+  line-height: 1.8;
+  letter-spacing: 1px;
+
+  padding: 40px;
+  box-sizing: border-box;
+}
+
+#bioTyping::after {
+  content: "|";
+  animation: blink 1s infinite;
+}
+
+@keyframes blink {
+  0%,100% { opacity: 0.3; }
+  50% { opacity: 1; }
+}
